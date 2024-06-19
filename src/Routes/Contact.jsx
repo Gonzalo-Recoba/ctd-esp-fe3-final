@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Form from '../Components/Form'
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import { useGlobalStates } from '../Components/utils/global.context'
 
 const Contact = () => {
+  const [show, setShow] = useState(true)
+  const {usuario, theme} = useGlobalStates()
+
   return (
-    <div>
-      <h2>Want to know more?</h2>
-      <p>Send us your questions and we will contact you</p>
-      <Form/>
+    <div style={{height:'100vh'}}>
+      {show ? (
+        <div>
+          <h2 style={{textAlign:"center"}}>¿Desea saber más?</h2>
+          <h3 style={{textAlign:"center"}}>Envíenos su consulta y nos comunicarémos con usted.</h3>
+          <Form show={show} setShow={setShow}/>
+        </div>
+      ) : (
+        <div style={{textAlign:"center", height:'100vh'}}>
+          <h2>Muchas gracias por su consulta {usuario.nombre}</h2>
+          <h4>Nos estaremos comunicando con usted al mail: {usuario.email}</h4>
+        </div>
+      )}
     </div>
   )
 }
