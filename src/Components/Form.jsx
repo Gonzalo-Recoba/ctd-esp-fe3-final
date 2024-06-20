@@ -14,16 +14,17 @@ const Form = ({show, setShow}) => {
     if(usuario.nombre.trim().length > 5 && regex.test(usuario.email) && usuario.consulta.trim().length > 10){
       setShow(false)
       setError(false)
+      alert(`
+        Consulta recibida correctamente.
+        Nombre ${usuario.nombre}
+        Email: ${usuario.email}
+        Consulta: ${usuario.consulta}
+        `)
     } else {
       setShow(true)
       setError(true)
     }
-    alert(`
-      Consulta recibida correctamente.
-      Nombre ${usuario.nombre}
-      Email: ${usuario.email}
-      Consulta: ${usuario.consulta}
-      `)
+
 
       setTimeout(() => {
         setShow(true)

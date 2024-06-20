@@ -7,13 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.favButton{
+.addFavButton, .deleteFavButton {
   background-color: skyblue;
   padding: 10px;
   border: none;
@@ -22,8 +21,11 @@ code {
   margin-bottom: 10px;
   border-radius: 10px;
 }
-
-.favButton:hover{
+.deleteFavButton{
+  width: 15%;
+  background-color: rgb(251, 97, 97);
+}
+.favButton:hover, .deleteFavButton:hover{
   color: white;
 }
 
@@ -75,6 +77,56 @@ footer {
 footer > img{
   width: 200px;
   margin: 0;
+}
+.imagenDH{
+  width: 35vw;
+  margin: 0;
+}
+.detailContainer{
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  bottom: 0;
+  height: 100vh;
+  margin-top: 2rem;
+}
+
+.detail > img{
+  width: 15vw;
+}
+
+.buttonBack, .buttonSoon{
+  background-color: rgb(255, 178, 178);
+  padding: 10px;
+  border: none;
+  width: 10vw;
+  cursor: pointer;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+
+}
+.buttonBack:hover, .buttonSoon:hover{
+  background-color: rgb(192, 254, 234);
+}
+
+.iconDetail{
+  font-size: 30px;
+}
+
+.errorPage{
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  bottom: 0;
+  height: 100vh;
+  margin-top: 2rem;
+  font-size: 30px;
+  color: red;
 }
 
 footer > p{
@@ -147,7 +199,7 @@ tr:nth-child(even) {
 }
 
 span{
-  font-size:0.8vw ;
+  font-size:12px ;
   position: relative;
   top: -5px;
 }

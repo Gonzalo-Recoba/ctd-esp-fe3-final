@@ -6,14 +6,11 @@ const Home = () => {
   const {odontologos, setFavs } = useGlobalStates()
   return (
     <main>
-      <h1>Home</h1>
+      <h1>Inicio</h1>
       <div className='card-grid'>
         {odontologos.map((odontologo)=>{
            return <Card key={odontologo.id} odontologo={odontologo}>
-            <button onClick={()=>{setFavs({
-                name: odontologo.name,
-                username: odontologo.username
-              })}} className="favButton">⭐ Agregar a favoritos</button>
+            <button onClick={() => setFavs((prevFavs)=>[...prevFavs, odontologo])} className="addFavButton">⭐ Agregar a favoritos</button>
            </Card>
           })}
       </div>

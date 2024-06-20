@@ -9,7 +9,7 @@ const Navbar = () => {
   const {favs, theme} = useGlobalStates()
 
   
-  const cantFavs = favs.length == 0 ? '' : "(1)"
+  const cantFavs = favs.length === 0 ? '' : "(" + favs.length + ")"
 
   return (
     <nav className={theme}>
@@ -18,8 +18,8 @@ const Navbar = () => {
         <Link to={routes.contact}><h3>Contacto</h3></Link>
         <Link to={routes.favs}><h3>Favoritos <span>{cantFavs}</span></h3></Link>
         <Theme/>
-        {/* <button onClick={changeTheme}>{theme == 'light' ? "⚫" : "⚪"}</button> */}
-    </nav>
-  )}
+      </nav>
+  )
+}
 
 export default Navbar

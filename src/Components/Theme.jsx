@@ -18,8 +18,8 @@ const Theme = () => {
     // const [state, dispatch] = useReducer(reducer, initialState)
 
   const changeTheme = () =>{
-    if(theme == 'dark') setTheme('light')
-    if(theme == 'light') setTheme('dark')
+    if(theme === 'dark') setTheme('light')
+    if(theme === 'light') setTheme('dark')
   }
 
   return (

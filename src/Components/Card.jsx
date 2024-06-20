@@ -1,16 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { routes } from "./utils/routes";
-import { useGlobalStates } from "./utils/global.context";
 
 
 const Card = ({ odontologo, children }) => {
 
-  const {name, username, } = odontologo
+  const {name, username, id } = odontologo
   return (
     <div className="card">
-      <Link to={routes.detail}>
-        <img src=".\images\doctor.jpg" alt="" />
+      <Link to={'/odontologo/' + id}>
+        <img src=".\images\doctor.jpg" alt="imagen doctor" />
           <h4>{name}</h4>
           <p>{username}</p>
       </Link>
