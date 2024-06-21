@@ -1,8 +1,6 @@
 import axios from "axios";
 import {createContext, useContext, useEffect, useState } from "react";
 
-// export const initialState = {theme: 'light', data: []}
-
 export const GlobalStates = createContext(undefined);
 
 const localFavs = JSON.parse(localStorage.getItem('favs')) || []
@@ -15,6 +13,7 @@ const ContextProvider = ({ children }) => {
   const [usuario, setUsuario] = useState({
     nombre: '', email: '', consulta: ''
   })
+
   useEffect(() => {
     localStorage.setItem('favs', JSON.stringify(favs))
   }, [favs])

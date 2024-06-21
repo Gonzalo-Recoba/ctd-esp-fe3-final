@@ -1,11 +1,10 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useGlobalStates } from '../Components/utils/global.context'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const Detail = () => {
   const navigate = useNavigate()
-  const {id} = useParams()
+  const { id } = useParams()
   const [odontologo, setOdontologo] = useState({})
 
 
@@ -17,7 +16,6 @@ const Detail = () => {
       .catch((err)=> console.log(err))
   }, [])
 
-console.log(odontologo)
   return (
     <div className='detailContainer'>
       <button onClick={()=>navigate(-1)} className='buttonBack'>🔙</button>
