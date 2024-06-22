@@ -3,15 +3,14 @@ import { useGlobalStates } from '../Components/utils/global.context'
 
 
 const Home = () => {
-  const {odontologos, setFavs } = useGlobalStates()
+  const {state } = useGlobalStates()
+
   return (
     <main>
       <h1>Inicio</h1>
       <div className='card-grid'>
-        {odontologos.map((odontologo)=>{
-           return <Card key={odontologo.id} odontologo={odontologo}>
-            <button onClick={() => setFavs((prevFavs)=>[...prevFavs, odontologo])} className="addFavButton">⭐ Agregar a favoritos</button>
-           </Card>
+        {state.odontologos.map((odontologo)=>{
+           return <Card key={odontologo.id} odontologo={odontologo}/>
           })}
       </div>
     </main>

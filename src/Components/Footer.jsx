@@ -2,10 +2,10 @@ import React from 'react'
 import { useGlobalStates } from './utils/global.context'
 
 const Footer = () => {
-  const {theme} = useGlobalStates()
+  const {state} = useGlobalStates()
   return (
-    <footer className={theme}>
-        <p>Powered by</p>
+    <footer className={state.theme}>
+        <p>Powered by Gonzalo Recoba <a href='mailto:gonzalo.recoba@gmail.com'>📧</a> in association with</p>
         <img src="./images/DH.png" alt='DH-logo' />
     </footer>
   )

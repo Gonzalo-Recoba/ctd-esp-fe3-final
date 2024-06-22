@@ -1,10 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useGlobalStates } from "./utils/global.context";
 
 
-const Card = ({ odontologo, children }) => {
+const Card = ({ odontologo }) => {
+  const {name, username, id } = odontologo;
+  const {state, dispatch } = useGlobalStates();
+  const findFavs = state.favs.find((fav) =>id === fav.id)
 
-  const {name, username, id } = odontologo
+  const addCart = () =>{
+    if(findFavs){
+      dispatch({type: "DELETE_FAV", payload: odontologo})
+    } else{
+      dispatch({type: "ADD_FAV", payload: odontologo})
+    }
+  }
+
   return (
     <div className="card">
       <Link to={'/odontologo/' + id}>
@@ -12,7 +23,7 @@ const Card = ({ odontologo, children }) => {
           <h4>{name}</h4>
           <p>{username}</p>
       </Link>
-      {children}
+      <button onClick={addCart} className={findFavs ? "deleteFavButton" : "addFavButton"}>{findFavs ? "❌ Quitar de favoritos" : "⭐ Agregar a favoritos"}</button>
     </div>
   );
 };

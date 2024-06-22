@@ -13,19 +13,29 @@ code {
 }
 
 .addFavButton, .deleteFavButton {
-  background-color: skyblue;
   padding: 10px;
   border: none;
   width: 90%;
   cursor: pointer;
   margin-bottom: 10px;
   border-radius: 10px;
+  background-color: rgb(208, 248, 165);;
 }
 .deleteFavButton{
-  width: 15%;
-  background-color: rgb(251, 97, 97);
+  background-color: rgb(255, 152, 152);
 }
-.favButton:hover, .deleteFavButton:hover{
+.deleteAllFavsButton{
+  width: 20%;
+  background-color: rgb(251, 97, 97);
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 10px;
+
+}
+
+.addFavButton:hover, .deleteFavButton:hover, .deleteAllFavsButton:hover  {
   color: white;
 }
 
@@ -42,7 +52,7 @@ nav{
 
 nav > .logo{
   height: 4vw;
-  align-self:center;
+  align-self: center;
 }
 
 a{
@@ -88,12 +98,12 @@ footer > img{
   padding: 2rem;
   position: relative;
   bottom: 0;
-  height: 100vh;
+  min-height: 100vh;
   margin-top: 2rem;
 }
 
 .detail > img{
-  width: 15vw;
+  width: 15%;
 }
 
 .buttonBack, .buttonSoon{
@@ -123,7 +133,7 @@ footer > img{
   padding: 2rem;
   position: relative;
   bottom: 0;
-  height: 100vh;
+  min-height: 100vh;
   margin-top: 2rem;
   font-size: 30px;
   color: red;

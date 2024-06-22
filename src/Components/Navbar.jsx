@@ -6,13 +6,11 @@ import Theme from './Theme'
 
 
 const Navbar = () => {
-  const {favs, theme} = useGlobalStates()
-
-  
-  const cantFavs = favs.length === 0 ? '' : "(" + favs.length + ")"
+  const {state} = useGlobalStates()
+  const cantFavs = state.favs.length > 0 ? "(" + state.favs.length + ")" : "";
 
   return (
-    <nav className={theme}>
+    <nav className={state.theme}>
         <Link to={routes.home}><img src="DH.ico" alt="logo" className='logo'/></Link>
         <Link to={routes.home}><h3>Inicio</h3></Link>
         <Link to={routes.contact}><h3>Contacto</h3></Link>

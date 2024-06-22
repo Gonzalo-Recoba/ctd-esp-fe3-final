@@ -1,13 +1,14 @@
 import React from 'react'
-import { useGlobalStates } from './utils/global.context'
+import { routes } from './utils/routes'
+import { Link } from 'react-router-dom'
 
 const ErrorPage = () => {
-  const {theme} = useGlobalStates()
   return (
     <div className='errorPage'>
         <img src="./images/DH.png" alt='DH-logo' className='imagenDH' />
         <h2>Error 404.</h2>
         <h2>Page not found.</h2>
+        <Link to={routes.home}><h4><button className='buttonBack'>🏠 Ir a Home</button></h4></Link>
     </div>
   )
 }

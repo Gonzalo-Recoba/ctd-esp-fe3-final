@@ -5,23 +5,23 @@ import { Link } from "react-router-dom";
 import { routes }  from "../Components/utils/routes";
 
 const Favs = () => {
-  const {favs,setFavs} = useGlobalStates()
+  const {state,dispatch} = useGlobalStates()
 
   return (
-    <div style={{textAlign:"center", height:'100vh'}}>
-    {favs.length > 0 ?
+    <div style={{textAlign:"center", minHeight:'100vh'}}>
+    {state.favs.length > 0 ?
       <>
         <h1>Odontologos favoritos</h1>
-        <button onClick={() => setFavs([])} className="deleteFavButton">Eliminar todos los favoritos</button>
+        <button onClick={() => dispatch({type: "DELETE_FAVS"})} className="deleteAllFavsButton">Eliminar todos los favoritos</button>
         <div className="card-grid">
-            {favs.map( (fav) => <Card key={fav.id} odontologo={fav}/>)}
+            {state.favs.map( (fav) => <Card key={fav.id} odontologo={fav}/>)}
           </div>
         </>
          : 
          <>
             <h1>No hay odontologos favoritos</h1>
             <h3>Agrega tus odontologos a favoritos desde el inicio.</h3>
-            <Link to={routes.home}><h4>Ir al home</h4></Link>
+            <Link to={routes.home}><h4><button className='buttonBack'>🏠 Ir a Home</button></h4></Link>
          </> }
       </div>
   );

@@ -12,9 +12,9 @@ import Layout from "./Layout/Layout";
 
 
 function App() {
-  const {theme} = useGlobalStates()
+  const {state} = useGlobalStates()
   return (
-      <div className={theme}>
+      <div className={state.theme}>
           <Routes>
             <Route path="/" element={<Layout/>}>
               <Route path={routes.home} element={<Home/>}/>
@@ -27,6 +27,4 @@ function App() {
       </div>
   );
 }
-
-{/* <Route path="/odontologo/:id" element={<Detail/>}/> */}
 export default App;

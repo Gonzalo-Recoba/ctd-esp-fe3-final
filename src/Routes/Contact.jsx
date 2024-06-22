@@ -4,7 +4,7 @@ import { useGlobalStates } from '../Components/utils/global.context'
 
 const Contact = () => {
   const [show, setShow] = useState(true)
-  const {usuario, theme} = useGlobalStates()
+  const {usuario} = useGlobalStates()
 
   return (
     <div style={{height:'100vh'}}>
